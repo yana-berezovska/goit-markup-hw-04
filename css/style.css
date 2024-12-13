@@ -49,6 +49,8 @@ button {
 }
 .header-page {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .nav-page {
   display: flex;
@@ -90,7 +92,7 @@ button {
   padding-bottom: 24px;
   display: block;
 }
-.nav-item-link:active::after {
+.nav-item-link:first-child:active::after {
   display: block;
   content: "";
   background-color: #404bbf;
@@ -98,7 +100,8 @@ button {
   width: 100%;
   height: 4px;
   position: absolute;
-  transform: translateY(20px);
+  left: 0;
+  bottom: -1px;
 }
 .nav-item-link {
   font-weight: 500;
@@ -130,7 +133,7 @@ button {
   background-color: #2e2f42;
   padding-top: 188px;
   padding-bottom: 188px;
-  width: 1440px;
+  max-width: 1440px;
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
@@ -138,7 +141,7 @@ button {
     url(../images/hero/people-office.jpg);
   margin: 0 auto;
   background-repeat: no-repeat;
-  background-position: 0 0;
+  background-position: center;
   background-size: cover;
 }
 .hero-title {
@@ -224,8 +227,6 @@ button {
   margin-bottom: 8px;
 }
 .hero-icon {
-  width: 64px;
-  height: 64px;
 }
 .team {
   background-color: #f4f4fd;
@@ -239,10 +240,9 @@ button {
   flex-direction: row;
   gap: 24px;
   margin-bottom: 32px;
+  padding: 0;
 }
 .team-icon {
-  width: 16px;
-  height: 16px;
   fill: #f4f4fd;
 }
 .team-icon-link {
@@ -341,6 +341,12 @@ button {
   height: 120px;
 }
 .portfolio-item {
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-item:focus,
+.portfolio-item:hover {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 .portfolio-conteiner {
   position: relative;
@@ -362,9 +368,7 @@ button {
   width: 100%;
   height: 100%;
   margin: 0;
-  padding-top: 40px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding: 40px 32px;
 }
 .overlay-link:hover .overlay,
 .overlay-link:focus .overlay {
@@ -445,9 +449,10 @@ button {
 .footer .container {
   display: flex;
   justify-content: flex-start;
+  align-items: baseline;
+  margin-right: 120px;
 }
 .footer-icon-container {
-  margin-left: 120px;
 }
 
 footer .logo {
