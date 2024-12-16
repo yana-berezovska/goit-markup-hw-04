@@ -92,7 +92,11 @@ button {
   padding-bottom: 24px;
   display: block;
 }
-.nav-item-link:first-child:active::after {
+.nav-item:first-child .nav-item-link {
+  color: #404bbf;
+}
+
+.nav-item-link::after {
   display: block;
   content: "";
   background-color: #404bbf;
@@ -348,6 +352,10 @@ button {
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
+.portfolio-item:focus .overlay,
+.portfolio-item:hover .overlay {
+  transform: translateY(0);
+}
 .portfolio-conteiner {
   position: relative;
   overflow: hidden;
@@ -372,7 +380,6 @@ button {
 }
 .overlay-link:hover .overlay,
 .overlay-link:focus .overlay {
-  transform: translateY(0);
 }
 
 .portfolio-title-box {
@@ -426,6 +433,7 @@ button {
   justify-content: flex-start;
   flex-direction: row;
   gap: 16px;
+  padding: 0;
 }
 .footer-icon-link {
   width: 40px;
@@ -450,9 +458,12 @@ button {
   display: flex;
   justify-content: flex-start;
   align-items: baseline;
-  margin-right: 120px;
 }
+
 .footer-icon-container {
+}
+.container-logo {
+  margin-right: 120px;
 }
 
 footer .logo {
